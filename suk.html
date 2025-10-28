@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>김석윤 | VR/게임 크리에이터</title>
+  <meta name="description" content="남서울대학교 가상현실학과 21학번 김석윤 — VR/게임 크리에이터 포트폴리오">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#0B0B0B; --bg:#FFF6EE; --card:#FFE8F0;
+      --pink:#FF2D55; --blue:#1E90FF; --yellow:#FFD400; --green:#00E676;
+      --shadow:10px 10px 0 0 var(--ink); --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink)}
+    body{font-family:"Noto Sans KR",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Apple SD Gothic Neo","맑은 고딕",sans-serif}
+    a{color:inherit}
+    img{max-width:100%;display:block}
+
+    .container{max-width:1150px;margin:0 auto;padding:24px}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:4px solid var(--ink);box-shadow:0 8px 0 0 rgba(11,11,11,.08)}
+    .nav-inner{display:flex;gap:20px;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{font-family:"Bebas Neue",sans-serif;font-size:34px;letter-spacing:1px;color:var(--pink);text-shadow:3px 3px 0 var(--ink)}
+    .nav .links a{font-weight:800;text-decoration:none;padding:8px 12px;border:3px solid var(--ink);border-radius:12px;background:#fff;box-shadow:3px 3px 0 0 var(--ink);margin-left:8px}
+    .nav .links a:hover{transform:translate(-1px,-1px);box-shadow:6px 6px 0 0 var(--ink)}
+
+    /* HERO */
+    .hero{margin-top:18px;position:relative;background:linear-gradient(135deg,#FFEFF4 0%,#FDE7EE 60%,#FBDCE7 100%);border:4px solid var(--ink);border-radius:28px;padding:44px;box-shadow:var(--shadow);overflow:hidden}
+    .hero h1{font-family:"Bebas Neue",sans-serif;letter-spacing:1px;font-size:84px;line-height:.95;margin:0 0 6px;color:var(--pink);text-shadow:6px 6px 0 var(--ink)}
+    .hero .sub{font-size:20px;opacity:.9;margin-bottom:16px}
+    .chips{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0 22px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:3px solid var(--ink);border-radius:18px;background:var(--yellow);box-shadow:4px 4px 0 0 var(--ink);font-weight:800}
+    .chip.pink{background:var(--pink);color:#fff}
+    .chip.green{background:var(--green)}
+    .cta{display:inline-block;background:var(--blue);color:#fff;border:3px solid var(--ink);padding:12px 18px;border-radius:16px;font-weight:900;text-decoration:none;box-shadow:6px 6px 0 0 var(--ink);transition:.15s}
+    .cta:hover{transform:translate(-2px,-2px);box-shadow:10px 10px 0 0 var(--ink)}
+    .quick{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .quick .tag{padding:6px 10px;border:3px solid var(--ink);border-radius:12px;background:#fff;box-shadow:3px 3px 0 0 var(--ink);font-weight:800}
+    .dots{position:absolute;right:-8px;bottom:-8px;width:200px;height:200px;
+      background:radial-gradient(var(--ink) 2.4px,transparent 2.5px) 0 0/14px 14px;
+      mask:radial-gradient(circle at top left,black 62%,transparent 63%);opacity:.9}
+
+    /* Section common */
+    section{margin-top:42px}
+    .section-title{font-family:"Bebas Neue",sans-serif;font-size:44px;letter-spacing:1px;margin:0 0 14px;color:var(--ink);display:inline-block;background:var(--yellow);border:3px solid var(--ink);border-radius:14px;padding:6px 14px;box-shadow:4px 4px 0 0 var(--ink)}
+
+    /* About */
+    .about{background:#fff;border:4px solid var(--ink);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);line-height:1.7}
+    .kv{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .badge{border:3px solid var(--ink);border-radius:999px;padding:8px 14px;background:#fff;font-weight:900;box-shadow:3px 3px 0 0 var(--ink)}
+
+    /* Skills */
+    .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .skill{background:var(--card);border:4px solid var(--ink);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+    .skill h4{margin:0 0 10px;font-size:20px}
+    .bar{width:100%;height:18px;background:#fff;border:3px solid var(--ink);border-radius:12px;position:relative;overflow:hidden}
+    .fill{height:100%;background:repeating-linear-gradient(-45deg,var(--blue),var(--blue) 10px,#fff 10px,#fff 20px);border-right:3px solid var(--ink)}
+
+    /* Projects */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:#fff;border:4px solid var(--ink);border-radius:18px;padding:0;overflow:hidden;box-shadow:var(--shadow)}
+    .thumb{aspect-ratio:16/9;background:linear-gradient(135deg,#FFE07D,#FF7DA7);border-bottom:4px solid var(--ink);background-size:cover;background-position:center}
+    .inner{padding:16px}
+    .pill{display:inline-block;padding:6px 10px;border:3px solid var(--ink);border-radius:999px;background:var(--yellow);font-weight:900;margin-right:6px;margin-bottom:6px}
+    .btn{display:inline-block;padding:10px 14px;border:3px solid var(--ink);border-radius:12px;background:var(--pink);color:#fff;font-weight:900;text-decoration:none;box-shadow:4px 4px 0 0 var(--ink);margin-right:8px}
+    .btn.alt{background:var(--green)}
+    .btn:hover{transform:translate(-1px,-1px);box-shadow:8px 8px 0 0 var(--ink)}
+
+    /* Experience */
+    .timeline{position:relative;padding-left:26px}
+    .timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:4px;background:var(--ink)}
+    .item{position:relative;margin:14px 0;padding:14px;background:#fff;border:4px solid var(--ink);border-radius:16px;box-shadow:var(--shadow)}
+    .item::before{content:"";position:absolute;left:-2px;top:18px;width:16px;height:16px;border:4px solid var(--ink);background:var(--yellow);border-radius:50%;box-shadow:3px 3px 0 0 var(--ink)}
+
+    /* Contact */
+    .contact{background:linear-gradient(135deg,#D7FBE8,#B6F2FF);border:4px solid var(--ink);border-radius:22px;padding:20px;box-shadow:var(--shadow)}
+    .contact .row{display:flex;gap:12px;flex-wrap:wrap}
+    .contact a{display:inline-block;padding:12px 16px;border:3px solid var(--ink);border-radius:14px;background:#fff;font-weight:900;text-decoration:none;box-shadow:4px 4px 0 0 var(--ink)}
+
+    footer{margin:32px 0 20px;text-align:center;opacity:.8;font-size:14px}
+
+    @media (max-width:960px){
+      .skills{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .hero h1{font-size:64px}
+    }
+    @media (max-width:640px){
+      .hero{padding:28px}
+      .hero h1{font-size:52px}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">KIM SEOKYUN</div>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#exp">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <h1>KIM SEOKYUN</h1>
+      <p class="sub">남서울대학교 · 가상현실학과(21) — VR/게임 크리에이터</p>
+
+      <div class="chips">
+        <span class="chip">Unity</span>
+        <span class="chip">Unreal</span>
+        <span class="chip pink">Blender</span>
+        <span class="chip green">Substance Painter</span>
+      </div>
+
+      <a class="cta" href="mailto:dod93247009@gmail.com">프로젝트 문의하기 🤗</a>
+
+      <div class="quick">
+        <span class="tag">📍 경기도 광명시</span>
+        <a class="tag" href="tel:01027216518">📞 010-2721-6518</a>
+        <a class="tag" href="mailto:dod93247009@gmail.com">✉️ dod93247009@gmail.com</a>
+      </div>
+      <div class="dots" aria-hidden="true"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2 class="section-title">ABOUT</h2>
+      <div class="about">
+        <p>
+          저는 개발과 디자인의 경계를 넘나드는 VR/게임 크리에이터 김석윤입니다. 사용자에게 ‘와, 이거 재밌다!’가 먼저 나오게 만드는 것을 목표로, 아이디어 발굴 → 프로토타이핑 → 사용자 피드백 → 개선의 사이클을 빠르게 돌립니다. Unity와 Unreal Engine을 오가며 시스템 설계와 인터랙션 로직을 직접 구현하고, 퍼포먼스 최적화와 빌드 자동화까지 챙겨 전시·데모 현장에서 안정적으로 동작하도록 마무리합니다.
+        </p>
+        <p>
+          동시에 시각 언어와 경험 설계를 깊게 다룹니다. Blender로 모델링하고 Substance Painter로 머티리얼을 완성해 화면의 질감을 끌어올리며, 색·타이포·리듬을 고려한 UI/HUD와 HMI 디자인을 직접 제작합니다. 정보 구조를 단순하게 정리해 사용자가 ‘생각 없이’도 길을 찾을 수 있게 하고, 작은 애니메이션과 사운드 큐로 상호작용의 손맛을 설계합니다.
+        </p>
+        <p>
+          팀에서는 아트–테크 브릿지 역할을 맡아 협업 흐름을 정리합니다. 피처 스펙을 명확히 쪼개 Jira/Notion으로 관리하고, Git 브랜치 전략과 코드 규칙을 통일해 품질을 유지합니다. 실사용 로그와 플레이테스트 피드백을 통해 가설을 검증하고, 데이터로 우선순위를 정해 개발 시간을 가장 큰 임팩트에 투자합니다. 결과적으로 ‘보여주기 좋은’ 데모를 넘어, 반복 가능한 제작 파이프라인을 함께 남기는 것을 중요하게 생각합니다 🤗
+        </p>
+        <div class="kv">
+          <span class="badge">강점: 빠른 프로토타이핑</span>
+          <span class="badge">강점: 아트–테크 브릿지</span>
+          <span class="badge">강점: 전시 퍼포먼스 튜닝</span>
+        </div>
+        <div class="kv">
+          <span class="badge">가치관: UX 최우선</span>
+          <span class="badge">가치관: 데이터/피드백 반복</span>
+          <span class="badge">가치관: 팀워크·기록 중심</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="section-title">SKILLS</h2>
+      <div class="skills">
+        <div class="skill">
+          <h4>Unity</h4>
+          <div class="bar"><div class="fill" style="width:88%"></div></div>
+        </div>
+        <div class="skill">
+          <h4>Unreal Engine</h4>
+          <div class="bar"><div class="fill" style="width:75%;background:repeating-linear-gradient(-45deg,var(--pink),var(--pink) 10px,#fff 10px,#fff 20px)"></div></div>
+        </div>
+        <div class="skill">
+          <h4>Blender</h4>
+          <div class="bar"><div class="fill" style="width:72%"></div></div>
+        </div>
+        <div class="skill">
+          <h4>Substance Painter</h4>
+          <div class="bar"><div class="fill" style="width:70%;background:repeating-linear-gradient(-45deg,var(--green),var(--green) 10px,#fff 10px,#fff 20px)"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title">FEATURED PROJECTS</h2>
+  <div class="grid">
+    <!-- neon arkanoid -->
+    <article class="card">
+      <div class="thumb" style="background-image:url('q.png');"></div>
+      <div class="inner">
+        <h3 style="margin:0 0 6px">Neon Arkanoid</h3>
+        <p style="margin:0 0 10px; opacity:.9">벽돌들을 파괴하는 클래식 아케이드 게임.</p>
+        <div style="margin-bottom:10px">
+          <span class="pill">Unity</span>
+          <span class="pill">2D</span>
+          <span class="pill">VFX</span>
+        </div>
+
+        <!-- ✅ 출시 링크 새 탭 열기 -->
+        <a class="btn"
+           href="https://www.game-ping.kr/games/neon-arkanoid"
+           target="_blank"
+           rel="noopener noreferrer">플레이 🤗</a>
+      </div>
+    </article>
+
+
+        <!-- 404 NOT FOUND -->
+<article class="card">
+  <div class="thumb" style="background-image:url('404.png');"></div>
+  <div class="inner">
+    <h3 style="margin:0 0 6px">Exit Zone : Fire</h3>
+    <p style="margin:0 0 10px; opacity:.9">화재시 대처 MR 시뮬레이션.</p>
+    <div style="margin-bottom:10px">
+      <span class="pill">Unreal</span>
+      <span class="pill">Niagara</span>
+      <span class="pill">MR</span>
+      <span class="pill">Blender</span>
+      <span class="pill">Substance Painter</span>
+    </div>
+
+    <!-- ✅ 유튜브 시연 영상 새 탭 열기 -->
+    <a class="btn"
+       href="https://youtube.com/shorts/SPevowQVfV4"
+       target="_blank"
+       rel="noopener noreferrer">시연 영상 🤗</a>
+  </div>
+</article>
+</div>
+</section>
+
+
+    <!-- EXPERIENCE -->
+    <section id="exp">
+      <h2 class="section-title">EXPERIENCE</h2>
+      <div class="timeline">
+        <div class="item">
+         <strong> 남서울대학교 가상현실학과 (21학번)</strong><br/>VR/게임 프로토타이핑·UX/HMI 스터디, 전시형 데모 제작.
+        </div>
+        <div class="item">
+          <strong> VR 동아리·전시</strong><br/>VR/AR 콘텐츠 전시회 참여, 팀 프로젝트 리드 및 데모 운용.
+        </div>
+        <div class="item">
+          <strong> 콘텐츠 제작</strong><br/>Unity/Unreal 기반 게임·시뮬레이션 다수, Blender 모델링, Substance 텍스처링.
+        </div>
+      </div>
+    </section>
+
+  <!-- AWARDS -->
+<section id="awards">
+  <h2 class="section-title">AWARDS</h2>
+  <div class="grid">
+    <!-- 수상 1 -->
+    <article class="card">
+      <div class="inner">
+        <h3 style="margin:0 0 8px">🏆 unity 실감형 콘텐츠 수료</h3>
+        <p style="opacity:.9">unity 실감형 콘텐츠 수료 🤗</p>
+        <div style="margin-top:8px">
+          <span class="pill">Team Project</span>
+          <span class="pill">Unity</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 수상 2 -->
+    <article class="card">
+      <div class="inner">
+        <h3 style="margin:0 0 8px">🎨 NSU 가상현실학과 전시회</h3>
+        <p style="opacity:.9">"DISTORY ROBOT" VR 콘텐츠 장려상 🤗</p>
+        <div style="margin-top:8px">
+          <span class="pill">Unreal</span>
+          <span class="pill">Cinematic</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 수상 3 -->
+    <article class="card">
+      <div class="inner">
+        <h3 style="margin:0 0 8px">💡 메타버스 경진대회</h3>
+        <p style="opacity:.9">"호올스의 요리비책" 1차 합격 🤗</p>
+        <div style="margin-top:8px">
+          <span class="pill">VR</span>
+          <span class="pill">3D Design</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ✅ 수상 4 -->
+    <article class="card">
+      <div class="inner">
+        <h3 style="margin:0 0 8px">🏅 충남 콘텐츠 아카데미 VP 수료</h3>
+        <p style="opacity:.9">Team Project "연" 제작 🤗</p>
+        <div style="margin-top:8px">
+          <span class="pill">virtual-production</span>
+          <span class="pill">VP</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+
+
+  <!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">CONTACT</h2>
+  <div class="contact">
+    <p style="font-weight:700;font-size:18px;margin-top:0">
+      협업/프로젝트 문의는 아래 채널로 연락 주세요 🤗
+    </p>
+    <div class="row">
+      <!-- 클릭 비활성화 (a → span으로 변경) -->
+      <span class="tag">✉️ 이메일 보내기</span>
+      <span class="tag">📞 전화/문자</span>
+      <span class="tag">📍 경기도 광명시</span>
+    </div>
+  </div>
+</section>
+
+    <footer>© 2025 Kim Seokyun. Pop-Art theme by 당신의 어시스턴트 🤗</footer>
+  </div>
+</body>
+</html>
